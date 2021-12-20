@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
 import AppLoading from 'expo-app-loading';
 import Navigator from './navigation/Navigator';
+import { Provider } from 'react-redux';
+import store from './store';
 
 
 
@@ -18,6 +20,9 @@ export default function App() {
   if (!fontsLoaded) return <AppLoading/>
   
   return (
-      <Navigator />
+    <Provider store={store}>
+         <Navigator />
+    </Provider>
+     
   );
 }
