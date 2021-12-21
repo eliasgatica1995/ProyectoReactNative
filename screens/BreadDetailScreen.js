@@ -1,18 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Text,View,StyleSheet,Button} from 'react-native';
-import GridItem from './GridItem';
 import {Image} from 'react-native'
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem} from '../store/actions/CartAction';
+
+
 export default function BreadDetailScreen ({navigation,route}) {
-   const prod = route.params?.item
+
+   const item = useSelector(state=>state.items.selected)
+   const dispatch = useDispatch()
+
+   const handlerAddItemCart = ()=>dispatch(addItem(item))
+   
       return (
         <View style={style.container}>
-          <Text style={style.title}>{prod.title}</Text>
+          <Text style={style.title}>{item.title}</Text>
           <View style={style.containerImg}>
-            <Image style={style.imagen} source={{uri: prod.image}}/>
+            <Image style={style.imagen} source={{uri: item.image}}/>
           </View>
           
-          <Text style={style.description}>{prod.description}</Text>
-          <Text style={style.price}>${prod.price}</Text>       
+          <Text style={style.description}>{item.description}</Text>
+          <Text style={style.price}>${item.price}</Text>
+          <Button title={'Agregar al carrito'} onPress={handlerAddItemCart}> </Button>     
 
          
          

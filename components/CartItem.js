@@ -1,8 +1,14 @@
 import React from "react";
 import {View,Text,StyleSheet} from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
+import { useDispatch } from "react-redux";
+import { removeItem } from "../store/actions/CartAction";
 
-export default function CartItem({item}){
+
+export default function CartItem({item,onDelete}){
+    const dispatch = useDispatch()
+    const handlerDeleteItem = () => dispatch(removeItem(item.id));
+
         return (
             <View style={styles.item}>
                 <View style={styles.detail}>
@@ -11,7 +17,7 @@ export default function CartItem({item}){
             
                 <Text style={styles.centrar}>Cantidad:{item.stock}</Text>
                 <Text>Precio:{item.price}</Text>
-                <Ionicons name={'trash'}size={24} color={'#d2d2d2'}/>
+                <Ionicons name={'trash'}size={30} color={'#d2d2d2'} onPress={handlerDeleteItem}/>
             </View>
     )
 }

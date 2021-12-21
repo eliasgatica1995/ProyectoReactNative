@@ -47,7 +47,7 @@ function ShopStackRender(){
                     },
                   }}
                   >
-                    <Stack.Screen name="Home" component={CategoryScreen} options={{ title: 'Categorias'}}/>
+                    <Stack.Screen name="Home" component={CategoryScreen} options={{ title: 'Great Market'}}/>
                     <Stack.Screen name="CategoryBreadScreen" options={({ route }) => ({ title: route.params?.name })} component={CategoryBreadScreen}/>
                     <Stack.Screen name="Detail" options={({ route }) => ({ title: route.params?.name })} component={BreadDetailScreen}/>
 

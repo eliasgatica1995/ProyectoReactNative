@@ -1,0 +1,1 @@
+export const URL= 'https://proyecto-react-native-5d438-default-rtdb.firebaseio.com/'
