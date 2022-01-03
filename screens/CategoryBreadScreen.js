@@ -38,6 +38,7 @@ export default function CategoryBreadScreen({navigation,route}){
         <View style={styles.container}>
         
             {breadMap()}
+
         </View>
       );
   }

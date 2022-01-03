@@ -8,8 +8,18 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 
-
 const Stack = createStackNavigator();
+
+import { init } from './db';
+
+init()
+.then(() => console.log("Db initialized"))
+.catch((error)=> {
+  console.log('Db fail connect:');
+  console.log(error.message);
+})
+
+
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -20,9 +30,12 @@ export default function App() {
   if (!fontsLoaded) return <AppLoading/>
   
   return (
-    <Provider store={store}>
-         <Navigator />
-    </Provider>
+   
+        <Provider store={store}>
+           <Navigator />
+        </Provider>
+  
+    
      
   );
 }

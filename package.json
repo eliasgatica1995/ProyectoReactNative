@@ -18,7 +18,10 @@
     "expo": "~43.0.2",
     "expo-app": "^0.9.22",
     "expo-app-loading": "~1.2.1",
+    "expo-file-system": "~13.0.3",
     "expo-font": "~10.0.3",
+    "expo-image-picker": "~11.0.3",
+    "expo-location": "^14.0.1",
     "expo-status-bar": "~1.1.0",
     "loading": "^1.13.3",
     "react": "17.0.1",
@@ -29,7 +32,8 @@
     "react-native-web": "0.17.1",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "expo-sqlite": "~10.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

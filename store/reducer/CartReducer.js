@@ -26,7 +26,7 @@ const CartReducer = (state =INITIAL_STATE,action)=>{
         case REMOVE_ITEM:
              const filteredCart = state.items.filter(item=>item.id !== action.itemID)
         return {...state, items: filteredCart, total : sumTotal(filteredCart)}
-        case CONFIRM_CART:
+        case CONFIRM_CART:         
         return {...state,items:[], total:0}
         default:
         return state

@@ -9,14 +9,14 @@ import CartReducer from "./reducer/CartReducer";
 
 
 
+
 import thunk from "redux-thunk";
-
-
 
 const RootReducer = combineReducers({
     categories: CategoryReducer,
     items: ItemReducer,
-    cart: CartReducer
+    cart: CartReducer,
+    
 })
 
 export default createStore(RootReducer,applyMiddleware(thunk))
